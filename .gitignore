@@ -1,0 +1,4 @@
+*.log
+*.img*
+cloud-init
+dns
