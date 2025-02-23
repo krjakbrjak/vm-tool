@@ -1,0 +1,10 @@
+#cloud-config
+ssh_pwauth: True
+users:
+  - name: exampleuser
+    plain_text_passwd: examplepass
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    shell: /bin/bash
+    groups: sudo
+    lock_passwd: false
+packages: []
