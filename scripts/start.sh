@@ -120,9 +120,9 @@ EOF
     QEMU_CMD+=(-smbios type=1,serial=ds="nocloud;s=http://${LAN_IP}:${CLOUD_INIT_PORT}/")
   fi
 
-  IMAGE_FILE="ubuntu-22.04-server-cloudimg-amd64.img"
+  IMAGE_FILE="ubuntu-25.04-server-cloudimg-amd64.img"
   if [ ! -f "${IMAGE_FILE}" ]; then
-    curl -LO https://cloud-images.ubuntu.com/releases/22.04/release/${IMAGE_FILE}
+    curl -LO https://cloud-images.ubuntu.com/releases/25.04/release/${IMAGE_FILE}
   fi
   cp ${IMAGE_FILE} ${IMAGE_FILE}-${TAP_DEVICE}
 
