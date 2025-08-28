@@ -5,8 +5,7 @@ This repo contains scripts that help create bridges, TAP devices, and start QEMU
 ## Usage
 
 ```bash
-cd scripts
-./bridge.sh
-./tap.sh
-./start.sh -c ./cloud
+./scripts/bridge.sh
+./scripts/tap.sh
+./scripts/start.sh -c ./cloud
 ```
