@@ -61,26 +61,6 @@ parse_params() {
 
 parse_params "$@"
 
-function add_rule() {
-  action=$1
-  rule=$2
-  table=${3:-}
-  command="sudo iptables"
-  if [ ! -z "${table}" ]; then
-    command="${command} -t ${table}"
-  fi
-
-  check_command="${command} -C ${rule}"
-
-  # Check if rule exists
-  if ${check_command} 2>/dev/null; then
-    echo "Rule exists"
-  else
-    command="${command} ${action} ${rule}"
-    ${command}
-  fi
-}
-
 # 1. Create the tap interface
 if ! ip link show ${TAP_DEVICE} > /dev/null 2>&1; then
   sudo ip tuntap add dev ${TAP_DEVICE} mode tap
